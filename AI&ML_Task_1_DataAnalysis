@@ -1,0 +1,21 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the dataset
+file_path = r'D:\studies\Mamoona\Mamoona B(SE)\Semester_4\ComputerNetwork\AI&ML_Intern\cereal.csv'
+df = pd.read_csv(file_path)
+
+# Display the first few rows
+print("First 5 rows of the dataset:\n", df.head())
+
+# Basic statistics
+print("\nMean values:\n", df.mean(numeric_only=True))
+print("\nMedian values:\n", df.median(numeric_only=True))
+print("\nStandard Deviation:\n", df.std(numeric_only=True))
+
+# Plot histograms for numerical columns
+df.hist(bins=10, figsize=(15, 10), edgecolor='black')
+plt.suptitle('Histograms of Numeric Features', fontsize=16)
+plt.tight_layout()
+plt.show()
